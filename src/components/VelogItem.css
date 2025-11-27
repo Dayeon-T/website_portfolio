@@ -1,0 +1,43 @@
+.icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  color: inherit;
+  transition: transform 0.7s ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.more-velog {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #b6bac5;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.25s ease;
+  text-decoration: none;
+}
+
+.more-velog:hover {
+  color: #007aff;
+}
+
+.more-velog:hover .icon {
+  transform: rotate(360deg);
+}
+
+.more-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #b6bac5;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.25s ease;
+  text-decoration: none;
+}

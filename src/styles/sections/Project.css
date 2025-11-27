@@ -1,0 +1,32 @@
+/* react-masonry-css 레이아웃 및 카드 스타일은 global.css로 통합됨 */
+
+/* 프로젝트 스택 배지 스타일 */
+.project-stack {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-stack-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #f4f2ed;
+  transition: transform 0.2s;
+}
+
+.project-stack-item:hover {
+  transform: scale(1.1);
+}
+
+.project-stack-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

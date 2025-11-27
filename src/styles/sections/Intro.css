@@ -1,0 +1,72 @@
+/* Intro 전체 레이아웃 */
+.intro-section {
+  width: 100%;
+  min-height: 100px;
+  padding-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+/* 상단 로고 */
+.intro-logo {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* 텍스트 묶음 */
+.intro-text h1 {
+  font-size: 48px;
+  font-weight: 400;
+  font-family: "Gosan", "KakaoSmallFont", sans-serif;
+  margin: 5px 0;
+}
+
+.intro-text h2 {
+  font-size: 48px;
+  font-weight: 400;
+  font-family: "Gosan", "KakaoSmallFont", sans-serif;
+  margin: 5px 0;
+}
+
+/* 이름 강조 */
+.intro-name {
+  font-size: 48px;
+  font-weight: 400;
+  font-family: "Gosan", "KakaoSmallFont", sans-serif;
+  color: var(--primary);
+  margin: 15px 0 5px 0;
+}
+
+/* "입니다" 붙이는 줄 */
+.intro-name-line {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+}
+
+.intro-end {
+  font-size: 48px;
+  font-weight: 400;
+  font-family: "Gosan", "KakaoSmallFont", sans-serif;
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+
+.aline {
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(97, 97, 97);
+}
+
+.intro-description-box p {
+  margin: 0 0 14px;
+  color: rgb(97, 97, 97);
+}

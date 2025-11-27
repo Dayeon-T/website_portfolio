@@ -1,0 +1,46 @@
+section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+/* --- 공통 Masonry 레이아웃 --- */
+.project-masonry {
+  display: flex;
+  margin-left: -24px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.project-masonry-column {
+  padding-left: 24px;
+  background-clip: padding-box;
+}
+
+/* --- 공통 카드 스타일 & 애니메이션 --- */
+.project-card {
+  margin-bottom: 40px;
+  padding: 24px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  
+  /* ✨ 애니메이션 핵심: 변화가 일어날 때 0.3초 동안 부드럽게 이동 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 마우스 올렸을 때 위로 6px 이동 */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 1px dashed #ddd;
+}

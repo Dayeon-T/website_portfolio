@@ -1,0 +1,111 @@
+.skills-section {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+
+  font-family: "KakaoSmallFont", sans-serif;
+}
+
+/* 제목 */
+.skills-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #007aff;
+}
+
+.skills-subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+/* 🔵 카테고리 탭 */
+.skills-tabs {
+  display: flex;
+  gap: 14px;
+  margin: 25px 0 40px;
+  background: #f7f7f7ff;
+  padding: 10px 13px;
+  border-radius: 40px;
+}
+
+.skills-tab {
+  padding: 5px 18px;
+  border: none;
+  background: transparent;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #9ca3af;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+.skills-tab.active {
+  background: #007aff;
+  color: white;
+}
+
+.skills-tab:hover {
+  /* background: #dce9ff;
+  color: #007aff; */
+
+  transform: translateY(-3px);
+}
+
+/* 아이콘 그리드 */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 35px;
+  column-gap: 20px;
+}
+
+/* 카드 */
+.skill-card {
+  /* background: #fafafa;
+  border-radius: 25px; */
+  padding: 10px 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  /* border: 1px solid #e6e6e6; */
+  transition: all 0.25s ease;
+}
+
+/* 흐려지는 효과 */
+.skill-card.fade-out {
+  opacity: 0.2;
+  filter: grayscale(90%);
+  pointer-events: none;
+  transform: none;
+}
+
+/* hover */
+.skill-card:hover {
+  transform: translateY(-6px);
+  /* background: var(--primary); */
+  color: white;
+  border-color: transparent;
+}
+
+/* 아이콘 */
+.skill-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.skill-name {
+  font-size: 20px;
+  font-weight: 600;
+}

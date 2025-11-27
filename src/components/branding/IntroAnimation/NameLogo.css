@@ -1,0 +1,128 @@
+.logo-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 40px;
+  border-radius: 999px;
+  background: radial-gradient(circle at top, #ffffff 0%, #fff 70%, #fff 100%);
+  cursor: default;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-row::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.6) 45%,
+    transparent 60%
+  );
+  transform: translateX(-100%) rotate(8deg);
+  animation: sheen 1.4s ease-in forwards 0.45s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo-row:hover {
+  transform: translateY(-8px) scale(1.015);
+}
+
+.logo-row:hover::after {
+  animation: none;
+  animation: sheen 1.1s ease-in forwards 0s;
+}
+
+.logo-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(10px) scale(0.1);
+  border-radius: 50%;
+  animation: dotToIcon 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.icon-1 {
+  --spread-x: -18px;
+  --hover-delay: 0s;
+  animation-delay: 0s;
+}
+.icon-2 {
+  --spread-x: 0px;
+  --hover-delay: 0.05s;
+  animation-delay: 0.08s;
+}
+.icon-3 {
+  --spread-x: 18px;
+  --hover-delay: 0.1s;
+  animation-delay: 0.16s;
+}
+
+.icon-inner {
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Hover bounce for each icon with staggered delays */
+.logo-row:hover .logo-icon .icon-inner {
+  animation: hoverLift 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: var(--hover-delay, 0s);
+}
+
+@keyframes dotToIcon {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.1);
+    filter: blur(2px);
+  }
+  35% {
+    opacity: 1;
+    transform: translateY(-6px) translateX(var(--spread-x)) scale(0.55);
+    filter: blur(0);
+  }
+  65% {
+    transform: translateY(3px) translateX(calc(var(--spread-x) * 0.4))
+      scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+@keyframes hoverLift {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  55% {
+    transform: translateY(-14px) scale(1.08);
+  }
+  100% {
+    transform: translateY(-8px) scale(1);
+  }
+}
+
+@keyframes sheen {
+  0%,
+  60% {
+    transform: translateX(-120%) rotate(8deg);
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(140%) rotate(8deg);
+    opacity: 0;
+  }
+}
+
+.logo-icon svg {
+  display: block;
+}

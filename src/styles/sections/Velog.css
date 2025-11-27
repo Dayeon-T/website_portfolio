@@ -1,0 +1,57 @@
+/* Responsive grid: 1 → 2 → 3 columns */
+.velog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .velog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .velog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card */
+.velog-card {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+/* Thumbnail area keeps consistent aspect ratio */
+.velog-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #f3f4f6;
+}
+.velog-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Body */
+.velog-card-body {
+  padding: 14px 16px;
+}
+.velog-date {
+  font-size: 14px;
+  color: #6b7280;
+}
+.velog-title {
+  font-weight: 700;
+  margin-top: 6px;
+}
+.velog-desc {
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+}

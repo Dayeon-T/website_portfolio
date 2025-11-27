@@ -1,0 +1,21 @@
+.skill-tooltip {
+  background: transparent;
+
+  border: none;
+  padding: 0;
+}
+
+.skill-tooltip__shell {
+  position: relative;
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: #171717;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.skill-tooltip__text {
+  position: relative;
+  z-index: 1;
+}

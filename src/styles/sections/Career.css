@@ -1,0 +1,216 @@
+.career-section {
+  width: 65%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 160px;
+  padding-bottom: 120px;
+}
+
+/* 상단 타이틀 영역 */
+.career-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+}
+
+.career-exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  padding-bottom: 20px;
+  gap: 10px;
+}
+
+.career-exp p {
+  margin: 0;
+}
+
+.career-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 768px;
+  margin: 48px auto 32px;
+}
+
+.career-divider-line {
+  flex: 1;
+  height: 2px;
+  opacity: 0.5;
+}
+
+.career-divider-line.left {
+  background: #e9ecef;
+}
+
+.career-divider-line.right {
+  background: #e9ecef;
+}
+
+.career-divider-label {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.career-heading-en {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/*
+.career-heading-ko {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+.career-divider {
+  margin-top: 16px;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* 전체 리스트 래퍼 (타임라인 느낌)  /*
+.career-list {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+*/
+.career-list {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* 각 항목 한 줄 */
+.career-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  column-gap: 30px;
+  padding: 28px 0;
+  gap: 10px;
+}
+/*
+.career-item:first-child {
+  border-top: none;
+}
+
+/* 왼쪽 기간 */
+.career-period {
+  font-size: 18px;
+  font-weight: 400;
+  color: #868296;
+}
+/*
+/* 오른쪽 내용 */ /*
+.career-content {
+  position: relative;
+}
+
+/* 제목 + 파란 하이라이트 */
+.career-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #272727;
+  margin-top: 0;
+}
+
+.career-h1 {
+  font-size: 30px;
+  color: #007aff;
+  font-weight: 900;
+}
+/*
+.career-title::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  bottom: 2px;
+  height: 14px;
+  background: var(--accent-light); /* PPT에서 쓰인 느낌의 파란 형광펜 */ /*
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* 부제 & 설명 */
+.career-subtitle {
+  margin: 4px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #7a7a7a;
+}
+
+.career-content details {
+  margin-top: 8px;
+}
+
+.career-summary {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #b6bac5;
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.25s ease;
+}
+
+.career-summary-icon {
+  width: 13px;
+  height: 13px;
+  color: inherit;
+
+  transition: transform 0.7s ease;
+}
+
+.career-content details[open] .career-summary-icon {
+  transform: rotate(360deg);
+}
+
+.career-list-wrap {
+  margin: 0 48px;
+}
+
+.career-content details[open] .career-summary {
+  color: #007aff;
+}
+
+.career-description {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(34, 34, 34, 0.75);
+}
+
+.career-divider-small {
+  background-color: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/*
+/* 반응형 - 화면 줄어들 때 그리드 깨지지 않게 */ /*
+@media (max-width: 768px) {
+  .career-section {
+    padding-inline: 20px;
+  }
+
+  .career-item {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+
+  .career-period {
+    font-size: 16px;
+    color: rgba(34, 34, 34, 0.7);
+  }
+}*/
