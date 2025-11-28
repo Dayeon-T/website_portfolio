@@ -4,6 +4,7 @@ import svgr from "@svgr/rollup";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base : "/website_portfolio/",
   plugins: [svgr(), react()],
   server: {
     proxy: {
