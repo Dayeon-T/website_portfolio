@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CIcon from "../assets/C.svg";
 import CSSIcon from "../assets/CSS.svg";
 import FigmaIcon from "../assets/Figma.svg";
@@ -31,6 +32,7 @@ const stackIconMap = {
 };
 
 export default function ProjectItem({
+  id,
   tittle,
   intent,
   period,
@@ -41,41 +43,43 @@ export default function ProjectItem({
   image,
 }) {
   return (
-    <article className="project-card">
-      {image && (
-        <img
-          src={image}
-          alt={`${tittle} 미리보기`}
-          className="project-image"
-          loading="lazy"
-        />
-      )}
-      <h2>{tittle}</h2>
-      <p style={{ color: "gray" }}>{intent}</p>
+    <Link to={`/project/${id}`} className="project-card-link">
+      <article className="project-card">
+        {image && (
+          <img
+            src={image}
+            alt={`${tittle} 미리보기`}
+            className="project-image"
+            loading="lazy"
+          />
+        )}
+        <h2>{tittle}</h2>
+        <p style={{ color: "gray" }}>{intent}</p>
 
-      <p style={{ color: "gray", fontSize: "12px" }}>{period}</p>
+        <p style={{ color: "gray", fontSize: "12px" }}>{period}</p>
 
-      {Array.isArray(stack) && stack.length > 0 ? (
-        <ul className="project-stack">
-          {stack.map((tech) => {
-            const iconSrc = stackIconMap[tech];
-            return (
-              <li className="project-stack-item" key={tech}>
-                {iconSrc && (
-                  <img
-                    src={iconSrc}
-                    alt=""
-                    aria-hidden="true"
-                    className="project-stack-icon"
-                  />
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      ) : (
-        <p>-</p>
-      )}
-    </article>
+        {Array.isArray(stack) && stack.length > 0 ? (
+          <ul className="project-stack">
+            {stack.map((tech) => {
+              const iconSrc = stackIconMap[tech];
+              return (
+                <li className="project-stack-item" key={tech}>
+                  {iconSrc && (
+                    <img
+                      src={iconSrc}
+                      alt=""
+                      aria-hidden="true"
+                      className="project-stack-icon"
+                    />
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p>-</p>
+        )}
+      </article>
+    </Link>
   );
 }

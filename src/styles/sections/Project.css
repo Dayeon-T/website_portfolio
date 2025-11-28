@@ -1,5 +1,22 @@
 /* react-masonry-css 레이아웃 및 카드 스타일은 global.css로 통합됨 */
 
+/* 프로젝트 카드 링크 스타일 */
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card-link:hover .project-card {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
 /* 프로젝트 스택 배지 스타일 */
 .project-stack {
   list-style: none;

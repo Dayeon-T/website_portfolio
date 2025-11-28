@@ -1,6 +1,11 @@
 import "../styles/sections/Education.css";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 export default function Education() {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: certRef, isVisible: certVisible } = useScrollAnimation();
+  const { ref: eduRef, isVisible: eduVisible } = useScrollAnimation();
+
   const certifications = [
     {
       period: "2023.03",
@@ -33,12 +38,17 @@ export default function Education() {
 
   return (
     <section className="education-section" id="education">
-      <div className="career-header">
-        <h1 className="career-h1">교육 및 자격증</h1>
-      </div>
-      <div className="career-exp">
-        <p>방학이나 휴일을 활용하여 자격증이나 수료 과정을 통해</p>
-        <p> 꾸준히 실력을 쌓아가고 있습니다.</p>
+      <div
+        ref={headerRef}
+        className={`scroll-animate ${headerVisible ? "visible" : ""}`}
+      >
+        <div className="career-header">
+          <h1 className="career-h1">교육 및 자격증</h1>
+        </div>
+        <div className="career-exp">
+          <p>방학이나 휴일을 활용하여 자격증이나 수료 과정을 통해</p>
+          <p> 꾸준히 실력을 쌓아가고 있습니다.</p>
+        </div>
       </div>
       <div style={{ height: "100px" }}></div>
 
@@ -48,7 +58,10 @@ export default function Education() {
         <div className="career-divider-line right" />
       </div>
 
-      <div className="career-list">
+      <div
+        ref={certRef}
+        className={`career-list scroll-animate ${certVisible ? "visible" : ""}`}
+      >
         {certifications.map((item, index) => (
           <div className="career-item" key={index}>
             <div className="career-period">{item.period}</div>
@@ -65,7 +78,10 @@ export default function Education() {
         <div className="career-divider-line right" />
       </div>
 
-      <div className="career-list">
+      <div
+        ref={eduRef}
+        className={`career-list scroll-animate ${eduVisible ? "visible" : ""}`}
+      >
         {educations.map((item, index) => (
           <div className="career-item" key={index}>
             <div className="career-period">{item.period}</div>

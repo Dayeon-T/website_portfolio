@@ -1,3 +1,35 @@
+/* 애니메이션 키프레임 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .project-detail-container {
   max-width: 850px;
   margin: 40px auto;
@@ -6,12 +38,46 @@
   background: #ffffff;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   line-height: 1.6;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #3a5fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  transition: 0.2s;
+  animation: slideInLeft 0.4s ease-out;
+}
+
+.back-button:hover {
+  opacity: 0.7;
+}
+
+.project-detail-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 24px;
+  margin-top: 0px;
+  animation: fadeInUp 0.6s ease-out 0.3s both;
 }
 
 .project-detail-image-wrap {
   width: 100%;
   text-align: center;
   margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.project-detail-title-wrap{
+  display: flex;
+  gap:40px;
+  align-items: baseline;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 
 .project-detail-image {
@@ -21,9 +87,14 @@
 }
 
 .project-detail-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 0px;
+  color: #007aff;
+}
+
+.project-detail-info {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
 }
 
 .project-detail-info p {
@@ -33,6 +104,23 @@
 
 .project-detail-block {
   margin-top: 32px;
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.project-detail-block:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+
+.project-detail-block:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+
+.project-detail-block:nth-of-type(3) {
+  animation-delay: 0.7s;
+}
+
+.project-detail-block:nth-of-type(4) {
+  animation-delay: 0.8s;
 }
 
 .project-detail-block h2 {
@@ -47,6 +135,26 @@
 
 .project-detail-link {
   margin-top: 40px;
+  animation: fadeInUp 0.6s ease-out 0.9s both;
+}
+
+.project-detail-period {
+  font-size: 13px;
+  color: #8c8c8c;
+  margin-bottom: 0px;
+}
+
+.project-detail-block-title{
+  font-size: 25px !important;
+  
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.project-detail-block-content{
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0px;
 }
 
 .project-detail-link a {
@@ -58,4 +166,47 @@
 
 .project-detail-link a:hover {
   opacity: 0.7;
+}
+
+/* 기술 스택 아이콘 스타일 */
+.tech-stack-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: -20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tech-stack-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.tech-stack-item:nth-child(1) { animation-delay: 0.75s; }
+.tech-stack-item:nth-child(2) { animation-delay: 0.8s; }
+.tech-stack-item:nth-child(3) { animation-delay: 0.85s; }
+.tech-stack-item:nth-child(4) { animation-delay: 0.9s; }
+.tech-stack-item:nth-child(5) { animation-delay: 0.95s; }
+.tech-stack-item:nth-child(6) { animation-delay: 1s; }
+.tech-stack-item:nth-child(7) { animation-delay: 1.05s; }
+
+.tech-stack-item:hover {
+  transform: translateY(-2px);
+  
+}
+
+.tech-stack-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.tech-stack-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
 }

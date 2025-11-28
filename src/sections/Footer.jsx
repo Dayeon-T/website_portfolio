@@ -3,14 +3,15 @@ import "../styles/sections/Footer.css";
 export default function Footer() {
   return (
     <section className="footer-section">
-      <p className="footer-title">
+      <div className="footer-title">
         감사합니다
         <br />
-        <div className="footer-subtitle">혹시 궁금한 점이 있다면
-        <br />
-        편하게 연락주세요
-        </div>
-      </p>
+        <span className="footer-subtitle">
+          혹시 궁금한 점이 있다면
+          <br />
+          편하게 연락주세요
+        </span>
+      </div>
 
       <div className="footer-card">
         <p className="footer-label">전화번호</p>

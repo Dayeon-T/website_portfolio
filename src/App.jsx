@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar/Navbar";
 import Intro from "./sections/Intro";
 import Skills from "./sections/Skills";
@@ -6,15 +7,11 @@ import Career from "./sections/Career";
 import Education from "./sections/Education";
 import Velog from "./sections/Velog";
 import Footer from "./sections/Footer";
-
-// 🔥 상세 페이지 경로 수정!!
-import RogramDetail from "./sections/project/project-detail/RogramDetail";
-import TaraeDetail from "./sections/project/project-detail/TaraeDetail";
-import MindCommaDetail from "./sections/project/project-detail/MindCommaDetail";
+import ProjectDetail from "./sections/project/ProjectDetail";
 
 import "./styles/base/global.css";
 
-function App() {
+function MainPage() {
   return (
     <>
       <section id="intro" style={{ minHeight: "30vh" }}>
@@ -45,6 +42,15 @@ function App() {
 
       <Footer />
     </>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/project/:id" element={<ProjectDetail />} />
+    </Routes>
   );
 }
 

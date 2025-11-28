@@ -1,4 +1,5 @@
 import "../styles/sections/Career.css";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 const StarIcon = (props) => (
   <svg
     width="16"
@@ -152,15 +153,24 @@ const careerData = [
 export default function Career() {
   const awardItems = careerData.filter((item) => item.isAward).reverse();
   const expItems = careerData.filter((item) => item.isexp).reverse();
+  
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: awardRef, isVisible: awardVisible } = useScrollAnimation();
+  const { ref: expRef, isVisible: expVisible } = useScrollAnimation();
 
   return (
     <section className="career-section" id="career">
-      <div className="career-header">
-        <h1 className="career-h1">수상 및 활동</h1>
-      </div>
-      <div className="career-exp">
-        <p>다양한 경험과 프로젝트를 통해 </p>
-        <p>매일매일 조금씩 성장하고 있습니다.</p>
+      <div
+        ref={headerRef}
+        className={`scroll-animate ${headerVisible ? "visible" : ""}`}
+      >
+        <div className="career-header">
+          <h1 className="career-h1">수상 및 활동</h1>
+        </div>
+        <div className="career-exp">
+          <p>다양한 경험과 프로젝트를 통해 </p>
+          <p>매일매일 조금씩 성장하고 있습니다.</p>
+        </div>
       </div>
       <div className="career-divider">
         <div className="career-divider-line left" />
@@ -168,7 +178,10 @@ export default function Career() {
         <div className="career-divider-line right" />
       </div>
 
-      <div className="career-list-wrap">
+      <div
+        ref={awardRef}
+        className={`career-list-wrap scroll-animate ${awardVisible ? "visible" : ""}`}
+      >
         <div className="career-list">
           {awardItems.map((item, index) => (
             <div className="career-item" key={index}>
@@ -207,7 +220,10 @@ export default function Career() {
         <div className="career-divider-line right" />
       </div>
 
-      <div className="career-list-wrap">
+      <div
+        ref={expRef}
+        className={`career-list-wrap scroll-animate ${expVisible ? "visible" : ""}`}
+      >
         <div className="career-list">
           {expItems.map((item, index) => (
             <div className="career-item" key={index}>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/sections/Skills.css";
 import SkillTooltip from "../components/feedback/Tooltips/SkillTooltip";
+import useScrollAnimation from "../hooks/useScrollAnimation";
 
 import CIcon from "../assets/C.svg";
 import CSSIcon from "../assets/CSS.svg";
@@ -46,15 +47,22 @@ const skills = [
 /* 📌 컴포넌트 */
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState("전체");
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
 
   return (
     <section className="skills-section" id="skills">
-      <h1 className="skills-title">기술 스택 & 도구</h1>
-      <p>
-        학습 과정과 프로젝트에서 직접 사용해본 기술들입니다.<br></br>
-        <br />각 기술의 기본 원리를 이해하고, 간단한 기능 구현에 활용할 수
-        있습니다.
-      </p>
+      <div
+        ref={titleRef}
+        className={`scroll-animate ${titleVisible ? "visible" : ""}`}
+      >
+        <h1 className="skills-title">기술 스택 & 도구</h1>
+        <p>
+          학습 과정과 프로젝트에서 직접 사용해본 기술들입니다.<br></br>
+          <br />각 기술의 기본 원리를 이해하고, 간단한 기능 구현에 활용할 수
+          있습니다.
+        </p>
+      </div>
       {/* 카테고리 버튼 */}
       <div className="skills-tabs">
         {categories.map((cat) => (
@@ -68,7 +76,10 @@ export default function Skills() {
         ))}
       </div>
       {/* 스킬 카드 그리드 */}
-      <div className="skills-grid">
+      <div
+        ref={gridRef}
+        className={`skills-grid scroll-animate-scale ${gridVisible ? "visible" : ""}`}
+      >
         {skills.map((skill, idx) => {
           const isActive =
             selectedCategory === "전체" || selectedCategory === skill.category;
